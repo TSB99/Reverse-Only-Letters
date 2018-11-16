@@ -1,0 +1,35 @@
+//Given a string S, return the "reversed" string where all characters that are not a letter stay in the same place, and all letters reverse their positions.
+
+//Examples:
+
+//Input: "ab-cd"
+//Output: "dc-ba"
+
+//Input: "Test1ng-Leet=code-Q!"
+//Output: "Qedo1ct-eeLg=ntse-T!"
+
+
+
+
+public String reverseOnlyLetters(String S) {
+
+Stack<Character> stack = new Stack<>();
+StringBuilder sb = new StringBuilder();
+// sb.append(“i”);
+//sb.toString();
+for(int i=0;i<S.length;i++){
+	char c = S.charAt(i);
+	if(Character.isLetter(c)){
+		stack.push(c);
+} 
+}
+
+for(int j=0; j<S.length;j++){
+	if(!Character.isLetter(S.charAt(j)){
+		sb.append(S.charAt(j));
+} else {
+sb.append(stack.pop());
+}
+}
+return sb.toString();
+}
